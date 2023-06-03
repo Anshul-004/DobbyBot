@@ -66,7 +66,7 @@ client.on('interactionCreate', (interaction) =>{
   }
 
   if(interaction.commandName === 'ping') {
-    interaction.channel.send(`🏓Latency is ${Date.now() - interaction.createdTimestamp }ms. API Latency is ${Math.round(client.ws.ping)}ms`);
+    interaction.reply(`🏓Latency is ${Date.now() - interaction.createdTimestamp }ms. API Latency is ${Math.round(client.ws.ping)}ms`);
   }
 
   if(interaction.commandName === 'help') {
