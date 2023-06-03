@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const { Client, IntentsBitField, EmbedBuilder } = require('discord.js');
+const { Client, IntentsBitField, ActivityType } = require('discord.js');
 
 const client = new Client({
   intents: [
@@ -15,6 +15,12 @@ const client = new Client({
 // on hone ke baad , console log krega, sirf console.
 client.on('ready', (c) => {
   console.log(`✅ ${c.user.tag} is online.`);
+
+
+  client.user.setActivity({
+    name: 'Quidditch',
+    type: ActivityType.Playing,
+  });
 });
 
 
@@ -43,6 +49,10 @@ client.on('messageCreate', (message) => {
   if (message.content == 'DOBBY SUPPORTS SLASH COMMANDS !'){
     message.reply('YESSSSSSSSSSSSS!');
   }
+  if (message.content == 'mkc'){
+    message.reply('teri double mkc');
+  }
+
 });
   
 //interaction with slash commands
@@ -56,7 +66,7 @@ client.on('interactionCreate', (interaction) =>{
   }
 
   if(interaction.commandName === 'ping') {
-    interaction.reply('1ms');
+    interaction.channel.send(`🏓Latency is ${Date.now() - interaction.createdTimestamp }ms. API Latency is ${Math.round(client.ws.ping)}ms`);
   }
 
   if(interaction.commandName === 'help') {
