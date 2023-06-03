@@ -1,17 +1,22 @@
 require('dotenv').config();
-const { REST, Routes } = require('discord.js');
+const { REST, Routes, ApplicationCommandOptionType } = require('discord.js');
 
 
 //commands !!
 const commands = [
   {
-    name: 'hey',
-    description: 'Replies with hey!',
+    name: 'info',
+    description: 'Replies with basic bot information',
   },
   {
     name: 'ping',
-    description: 'Pong!',
+    description: 'Replies with current bot ping',
   },
+  {
+    name: 'help',
+    description: 'Replies with help, Dobby can do',
+  },
+
 ];
 // commands lie above here 
 

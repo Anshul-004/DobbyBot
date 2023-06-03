@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const { Client, IntentsBitField } = require('discord.js');
+const { Client, IntentsBitField, EmbedBuilder } = require('discord.js');
 
 const client = new Client({
   intents: [
@@ -46,16 +46,21 @@ client.on('messageCreate', (message) => {
 });
   
 //interaction with slash commands
+
 client.on('interactionCreate', (interaction) =>{
 
   if(!interaction.isChatInputCommand()) return;
 
-  if(interaction.commandName === 'hey') {
-    interaction.reply('hey there !');
+  if(interaction.commandName === 'info') {
+    interaction.reply('Hi, This bot was created by user : An5HuL#9311 .\nThis is a fun experimental bot, and may be risky at times if not used wisely !');
   }
 
   if(interaction.commandName === 'ping') {
     interaction.reply('1ms');
+  }
+
+  if(interaction.commandName === 'help') {
+    interaction.reply('Dobby is always present in service of master! \n all the commands are listed with required descriptions, also there are many easter eggs involved...');
   }
 
 });
