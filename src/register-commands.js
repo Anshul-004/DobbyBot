@@ -15,10 +15,10 @@ const commands = [
   {
     name: 'help',
     description: 'Replies with help, Dobby can do',
-  },
+  }, 
 
 ];
-// commands lie above here 
+// commands lie above here careful
 
 
 const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
