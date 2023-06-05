@@ -40,3 +40,5 @@ const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
     console.log(`There was an error: ${error}`);
   }
 })();
+
+//to be addded commands -  search(using google search), flip a coin, minigames like this
