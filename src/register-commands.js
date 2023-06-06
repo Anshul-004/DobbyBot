@@ -41,4 +41,4 @@ const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
   }
 })();
 
-//to be addded commands -  search(using google search), flip a coin, minigames like this
+//to be addded commands -  search(using google search), flip a coin, minigames  like this
