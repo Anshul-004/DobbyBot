@@ -66,7 +66,7 @@ client.on('interactionCreate', (interaction) =>{
   }
 
   if(interaction.commandName === 'ping') {
-    interaction.reply(`🏓Latency is ${Date.now() - interaction.createdTimestamp }ms. API Latency is ${Math.round(client.ws.ping)}ms`);
+    interaction.reply(`🍾Latency is ${Date.now() - interaction.createdTimestamp }ms. API Latency is ${Math.round(client.ws.ping)}ms`);
   }
 
   if(interaction.commandName === 'help') {
@@ -76,3 +76,4 @@ client.on('interactionCreate', (interaction) =>{
 });
 
 client.login(process.env.TOKEN);
+//the .env file handles all the tokens flow in and out
