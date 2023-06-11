@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { REST, Routes, ApplicationCommandOptionType } = require('discord.js');
+const { REST, Routes, ApplicationCommandOptionType, ApplicationCommandType } = require('discord.js');
 
 
 //commands !!
@@ -15,6 +15,18 @@ const commands = [
   {
     name: 'help',
     description: 'Replies with help, Dobby can do',
+  }, 
+  {
+    name: 'length', // tobe updated
+    description: 'Replies with the length of the text followed',
+    options: [
+      {
+        name: 'yourtext',
+        description: 'the text whose length you want to find out ',
+        type: ApplicationCommandOptionType.String,
+        required : true,
+      }
+    ]
   }, 
 
 ];

@@ -73,6 +73,19 @@ client.on('interactionCreate', (interaction) =>{
     interaction.reply('Dobby is always present in service of master! \n all the commands are listed with required descriptions, also there are many easter eggs involved...');
   }
 
+  if(interaction.commandName === 'length') {
+    let usrinpt = interaction.options.get('yourtext')
+
+    let main_usrinpt =usrinpt.value
+    // let usrinpt1 = toString(main_usrinpt) //string aagayya!
+    
+    let lengthofstringnum= main_usrinpt.length
+    // console.log(lengthofstringnum)
+    // console.log(typeof(lengthofstringnum))
+    let lengthofstringstr = lengthofstringnum.toString()
+    interaction.reply("The length of text you entered was **"+lengthofstringstr+ "** Characters."); //return .length of the string recieved
+  }
+
 });
 
 client.login(process.env.TOKEN);
