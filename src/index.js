@@ -19,8 +19,9 @@ client.on('ready', (c) => {
 
   client.user.setActivity({
     name: 'Quidditch',
-    type: ActivityType.Playing,
+    type: ActivityType.Competing,
   });
+
 });
 
 
