@@ -12,7 +12,7 @@ const client = new Client({
     IntentsBitField.Flags.GuildEmojisAndStickers,
   ],
 });
-// on hone ke baad , console log krega, sirf console.
+// on hone ke baad , console log krega, sirf console(to the terminal)
 client.on('ready', (c) => {
   console.log(`✅ ${c.user.tag} is online.`);
 

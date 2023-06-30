@@ -24,7 +24,7 @@ const commands = [
         name: 'yourtext',
         description: 'the text whose length you want to find out ',
         type: ApplicationCommandOptionType.String,
-        required : true,
+        required : true, 
       }
     ]
   }, 
