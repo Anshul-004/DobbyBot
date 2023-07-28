@@ -63,7 +63,7 @@ client.on('interactionCreate', (interaction) =>{
   if(!interaction.isChatInputCommand()) return;
 
   if(interaction.commandName === 'info') {
-    interaction.reply('Hi, This bot was created by user : An5HuL#9311 .\nThis is a fun experimental bot, and may be risky at times if not used wisely !');
+    interaction.reply('Hi, This bot was created by user : an5hul .\nThis is a fun experimental bot, and may be risky at times if not used wisely !');
   }
 
   if(interaction.commandName === 'ping') {
@@ -81,8 +81,7 @@ client.on('interactionCreate', (interaction) =>{
     // let usrinpt1 = toString(main_usrinpt) //string aagayya!
     
     let lengthofstringnum= main_usrinpt.length
-    // console.log(lengthofstringnum)
-    // console.log(typeof(lengthofstringnum))
+
     let lengthofstringstr = lengthofstringnum.toString()
     interaction.reply("The length of text you entered was **"+lengthofstringstr+ "** Characters."); //return .length of the string recieved
   }
