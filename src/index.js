@@ -50,9 +50,6 @@ client.on('messageCreate', (message) => {
   if (message.content == 'DOBBY SUPPORTS SLASH COMMANDS !'){
     message.reply('YESSSSSSSSSSSSS!');
   }
-  if (message.content == 'mkc'){
-    message.reply('teri double mkc');
-  }
 
 });
   
