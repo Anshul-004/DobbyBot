@@ -87,3 +87,5 @@ client.on('interactionCreate', (interaction) =>{
 
 client.login(process.env.TOKEN);
 //the .env file handles all the tokens flow in and out
+
+//final comment 
