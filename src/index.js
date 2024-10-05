@@ -16,7 +16,7 @@ const client = new Client({
 client.on('ready', (c) => {
   console.log(`✅ ${c.user.tag} is online.`);
 
-
+//Bot's activity status
   client.user.setActivity({
     name: 'Quidditch',
     type: ActivityType.Competing,
@@ -27,8 +27,6 @@ client.on('ready', (c) => {
 
 // bot won't trigger itself, return here just returns
 client.on('messageCreate', (message) => {
-  // console.log(message.content) logs message in console.
-
   
   //if author is bot, reply nhi dega ye
   if (message.author.bot) {
@@ -41,10 +39,6 @@ client.on('messageCreate', (message) => {
 
   if (message.content == 'hi') {
     message.reply('hello');
-  }
-
-  if (message.content == 'yo'){
-    message.reply('to kaise hai aap log');
   }
   
   if (message.content == 'DOBBY SUPPORTS SLASH COMMANDS !'){
@@ -68,14 +62,13 @@ client.on('interactionCreate', (interaction) =>{
   }
 
   if(interaction.commandName === 'help') {
-    interaction.reply('Dobby is always present in service of master! \n all the commands are listed with required descriptions, also there are many easter eggs involved...');
+    interaction.reply('Dobby is always present in service of master! \n all the commands are listed with required description.');
   }
 
   if(interaction.commandName === 'length') {
     let usrinpt = interaction.options.get('yourtext')
 
     let main_usrinpt =usrinpt.value
-    // let usrinpt1 = toString(main_usrinpt) //string aagayya!
     
     let lengthofstringnum= main_usrinpt.length
 

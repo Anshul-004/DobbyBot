@@ -3,6 +3,7 @@ const { REST, Routes, ApplicationCommandOptionType, ApplicationCommandType } = r
 
 
 //commands !!
+//This file must be executed once, to register the commands to the discord's server and portal, alongwith the servers the bot is in, whenever a change is made here, the file must be executed.
 const commands = [
   {
     name: 'info',
@@ -17,7 +18,7 @@ const commands = [
     description: 'Replies with help, Dobby can do',
   }, 
   {
-    name: 'length', // tobe updated
+    name: 'length', 
     description: 'Replies with the length of the text followed',
     options: [
       {
@@ -42,7 +43,7 @@ const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
     await rest.put(
       Routes.applicationCommands(
         process.env.CLIENT_ID,
-        // process.env.GUILD_ID,
+
       ),
       { body: commands }
     );
@@ -54,4 +55,3 @@ const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 })();
 
 //to be addded commands -  search(using google search), flip a coin, minigames  like this
-//on windows, checking commits
