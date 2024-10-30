@@ -1,39 +1,36 @@
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 module.exports = {
-  name: "quote",
-  description: "Replies with a random quote",
+  name: "joke",
+  description: "Replies with a random joke",
   async execute(interaction) {
     try {
       // Send a "thinking" response while we fetch the quote
       await interaction.deferReply();
 
       // Fetch a random quote from the Quotable API
-      const response = await fetch('https://api.quotable.io/random');
+      const response = await fetch('https://v2.jokeapi.dev/joke/Any?type=single');
       const data = await response.json();
 
-      if (data.content && data.author) {
-        // Format the quote
-        const quote = `"${data.content}"\n\n- ${data.author}`;
+      if (data.error == false) {
+        const joke = data.joke;
 
-        // Create an embed for the quote
         const quoteEmbed = {
           color: 0x0099ff,
-          title: 'Random Quote',
-          description: quote,
+          description: joke,
           footer: {
-            text: 'Powered by Quotable API',
+            text: 'If the joke is inappropirate, please shove it up your ass.',
           },
         };
 
         // Reply with the quote embed
         await interaction.editReply({ embeds: [quoteEmbed] });
       } else {
-        await interaction.editReply('Sorry, I couldn\'t fetch a quote at the moment. Please try again later.');
+        await interaction.editReply('Sorry, I couldn\'t fetch the joke at the moment. Please try again later.');
       }
     } catch (error) {
-      console.error('Error fetching quote:', error);
-      await interaction.editReply('An error occurred while fetching the quote. Please try again later.');
+      console.error('Error fetching joke:', error);
+      await interaction.editReply('An error occurred while fetching the joke. Please try again later.');
     }
   },
 };
